@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    nombre: string;
+    svg: string;
+}
+const { svg, nombre } = Astro.props;
+---
+
+<button class="button">
+    <Icon name={svg} size={50} />{nombre}
+</button>
+
+<style>
+    :root {
+        --color: light-dark(#020617, #f8fafc);
+        --borde: light-dark(#718096, #718096);
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 1px solid var(--borde);
+        border-radius: 8px;
+        color: var(--color);
+        background-color: inherit;
+        gap: 8px;
+        cursor: inherit;
+    }
+</style>

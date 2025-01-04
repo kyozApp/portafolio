@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import perfil from "../assets/Perfil.webp";
+---
+
+<section class="section">
+    <figure class="figure">
+        <Image
+            src={perfil}
+            alt="Foto de perfil"
+            class="image"
+            loading="eager"
+        />
+    </figure>
+
+    <h2 class="nombre">&lt;/&gt; Erick Anthony Palomino Ruiz</h2>
+    <p class="p">
+        No soy un robot, <span class="spanPerfil1"
+            >soy un desarrollador Full Stack
+        </span>apasionado por la <span class="spanPerfil2">programación.</span>
+    </p>
+</section>
+
+<style>
+    :root {
+        --fondo: light-dark(#cbd5e1, #1e293b);
+        --span1: light-dark(#b91c1c, #f87171);
+        --span2: light-dark(#2563eb, #3b82f6);
+    }
+
+    .section {
+        top: 80px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 500px;
+        padding: 0 50px;
+        background-color: var(--fondo);
+    }
+
+    .figure {
+        display: flex;
+        width: 100%;
+        padding: 20px 0 0 40px;
+    }
+
+    .image {
+        width: 190px;
+        height: 180px;
+        margin-bottom: 1rem;
+        border-radius: 100%;
+    }
+
+    .spanPerfil1 {
+        color: var(--span1);
+    }
+
+    .spanPerfil2 {
+        color: var(--span2);
+    }
+
+    /* Tamaño para sm */
+    @media (640px < width) {
+        .figure {
+            align-items: center;
+            justify-content: center;
+            padding: 20px 40px 0 0;
+        }
+    }
+
+    /* Tamaño para md */
+    @media (768px < width) {
+    }
+
+    /* Tamaño para lg */
+    @media (1024px < width) {
+    }
+
+    /* Tamaño para xl */
+    @media (1280px < width) {
+    }
+
+    /* Tamaño para 2xl */
+    @media (1536px < width) {
+    }
+</style>
