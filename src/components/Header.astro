@@ -1,19 +1,11 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <header class="header">
     <h1 class="logo">Portafolio Kyoz</h1>
     <label for="menu" class="label_menu">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="35"
-            height="35"
-            fill="currentColor"
-            class="svg_menu"
-            viewBox="0 0 16 16"
-        >
-            <path
-                fill-rule="evenodd"
-                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-            ></path>
-        </svg>
+        <Icon name="menu" class="menu_icon" />
         <span class="span_menu">Toggle menu</span>
     </label>
     <input type="checkbox" id="menu" class="input_menu" />
@@ -38,17 +30,7 @@
                             value="light dark"
                             class="input_scheme"
                             checked
-                        /><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                fill="currentColor"
-                                d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0a.5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0a.5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25"
-                            ></path>
-                        </svg>
+                        /><Icon name="system" class="system_icon" />
                         <span class="span_menu">Toggle menu</span>
                     </label>
                     <label class="label_scheme">
@@ -57,29 +39,7 @@
                             type="radio"
                             value="light"
                             class="input_scheme"
-                        /><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                        >
-                            <g fill="none">
-                                <g
-                                    fill="currentColor"
-                                    clip-path="url(#siSunFill0)"
-                                >
-                                    <path
-                                        d="M12 0a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1M0 12a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1m21-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm-8 10a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0zm-6.657-3.343a1 1 0 0 1 0 1.414L4.93 20.485a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0M20.485 3.515a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0m-16.97 0a1 1 0 0 1 1.414 0l1.414 1.414A1 1 0 1 1 4.93 6.343L3.515 4.93a1 1 0 0 1 0-1.414m14.142 14.141a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 1 1-1.414 1.414l-1.414-1.414a1 1 0 0 1 0-1.414M5 12a7 7 0 1 1 14 0a7 7 0 0 1-14 0"
-                                    ></path>
-                                </g>
-                                <defs>
-                                    <clipPath id="siSunFill0">
-                                        <path fill="#fff" d="M0 0h24v24H0z"
-                                        ></path>
-                                    </clipPath>
-                                </defs>
-                            </g>
-                        </svg>
+                        /><Icon name="light" class="light_icon" />
                         <span class="span_menu">Toggle menu</span>
                     </label>
                     <label class="label_scheme">
@@ -88,17 +48,7 @@
                             type="radio"
                             value="dark"
                             class="input_scheme"
-                        /><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                fill="currentColor"
-                                d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22C6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981"
-                            ></path>
-                        </svg>
+                        /><Icon name="dark" class="dark_icon" />
                         <span class="span_menu">Toggle menu</span>
                     </label>
                 </fieldset>
@@ -166,7 +116,9 @@
         }
     }
 
-    .svg_menu {
+    .menu_icon {
+        width: 40px;
+        height: 40px;
     }
 
     .span_menu {
@@ -252,6 +204,21 @@
     .input_scheme {
         position: absolute;
         visibility: hidden;
+    }
+
+    .system_icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .light_icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dark_icon {
+        width: 20px;
+        height: 20px;
     }
 
     /* Tamaño para sm */
