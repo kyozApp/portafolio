@@ -1,0 +1,124 @@
+---
+import Head from "./Head.astro";
+
+interface Props {
+	title: string;
+	description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<Head title={title} description={description} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		&:has(input[name="color-scheme"][value="light dark"]:checked) {
+			color-scheme: light dark;
+		}
+
+		&:has(input[name="color-scheme"][value="light"]:checked) {
+			color-scheme: light;
+		}
+
+		&:has(input[name="color-scheme"][value="dark"]:checked) {
+			color-scheme: dark;
+		}
+	}
+
+	* {
+		position: relative;
+		min-width: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+
+	body {
+		width: 100%;
+		height: 100%;
+		min-height: 100dvh;
+		margin: 0;
+		font-family: var(--font-cafe);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		width: fit-content;
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	textarea {
+		max-height: 100px;
+		field-sizing: content;
+	}
+
+	dialog {
+		transition:
+			scale 0.3s ease,
+			display 0.3s ease allow-discrete;
+		scale: 0;
+
+		&[open] {
+			transition: scale 0.3s ease-in-out;
+			scale: 1;
+
+			@starting-style {
+				scale: 0;
+			}
+		}
+	}
+
+	label:has(:focus:valid) {
+		color: light-dark(var(--bg-green-700), var(--bg-green-700));
+	}
+
+	label:has(:focus-visible:valid) {
+		outline-color: light-dark(var(--bg-green-700), var(--bg-green-700));
+	}
+
+	label:has(:focus:invalid) {
+		color: light-dark(var(--bg-red-600), var(--bg-red-600));
+	}
+
+	label:has(:focus-visible:invalid) {
+		outline-color: light-dark(var(--bg-red-300), var(--bg-red-300));
+	}
+
+	/* Tamaño para sm */
+	@media (640px < width) {
+	}
+
+	/* Tamaño para md */
+	@media (768px < width) {
+	}
+
+	/* Tamaño para lg */
+	@media (1024px < width) {
+	}
+
+	/* Tamaño para xl */
+	@media (1280px < width) {
+	}
+
+	/* Tamaño para 2xl */
+	@media (1536px < width) {
+	}
+</style>

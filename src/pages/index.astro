@@ -1,0 +1,157 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Profile from "../components/Profile.astro";
+import IconAstro from "../icons/astro.svg";
+import IconHtml from "../icons/html.svg";
+import IconCss from "../icons/css.svg";
+import IconTailwind from "../icons/tailwind.svg";
+import IconJavascript from "../icons/javascript.svg";
+import IconTypescript from "../icons/typescript.svg";
+import IconHonojs from "../icons/honojs.svg";
+import IconCloudfare from "../icons/cloudfare.svg";
+import IconSqlite from "../icons/sqlite.svg";
+import IconMongo from "../icons/mongo.svg";
+import IconMysql from "../icons/mysql.svg";
+import IconPostgresql from "../icons/postgresql.svg";
+import IconGithub from "../icons/github.svg";
+import IconDocker from "../icons/docker.svg";
+import IconJava from "../icons/java.svg";
+import IconSpring from "../icons/spring.svg";
+import IconDjango from "../icons/django.svg";
+import IconPython from "../icons/python.svg";
+---
+
+<Layout title="Home" description="Portfolio personal de un desarrollador web">
+	<Header />
+	<Profile />
+	<section class="section_skill">
+		<h2>&starf; Habilidades</h2>
+		<article class="skill">
+			<button class="button">
+				<IconAstro class="icon" mode="sprite" />Astro
+			</button>
+			<button class="button">
+				<IconHtml class="icon" mode="sprite" />Html
+			</button>
+			<button class="button">
+				<IconCss class="icon" mode="sprite" />Css
+			</button>
+			<button class="button">
+				<IconTailwind class="icon" mode="sprite" />Tailwind
+			</button>
+			<button class="button">
+				<IconJavascript class="icon" mode="sprite" />Javascript
+			</button>
+			<button class="button">
+				<IconTypescript class="icon" mode="sprite" />Typescript
+			</button>
+			<button class="button">
+				<IconHonojs class="icon" mode="sprite" />Honojs
+			</button>
+			<button class="button">
+				<IconCloudfare class="icon" mode="sprite" />Cloudfare
+			</button>
+			<button class="button">
+				<IconSqlite class="icon" mode="sprite" />Sqlite
+			</button>
+			<button class="button">
+				<IconMongo class="icon" mode="sprite" />Mongo
+			</button>
+			<button class="button">
+				<IconMysql class="icon" mode="sprite" />Mysql
+			</button>
+			<button class="button">
+				<IconPostgresql class="icon" mode="sprite" />Postgresql
+			</button>
+			<button class="button">
+				<IconGithub class="icon" mode="sprite" />Github
+			</button>
+			<button class="button">
+				<IconDocker class="icon" mode="sprite" />Docker
+			</button>
+			<button class="button">
+				<IconJava class="icon" mode="sprite" />Java
+			</button>
+			<button class="button">
+				<IconSpring class="icon" mode="sprite" />Spring
+			</button>
+			<button class="button">
+				<IconDjango class="icon" mode="sprite" />Django
+			</button>
+			<button class="button">
+				<IconPython class="icon" mode="sprite" />Python
+			</button>
+		</article>
+	</section>
+</Layout>
+
+<style>
+	:root {
+		--fondo: light-dark(#cbd5e1, #1e293b);
+		--color: light-dark(#020617, #f8fafc);
+		--borde: light-dark(#718096, #718096);
+	}
+
+	.section_skill {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 0 50px;
+		background-color: var(--fondo);
+	}
+
+	.skill {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 0 50px 10px;
+		gap: 10px;
+	}
+
+	.button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 20px;
+		border: 1px solid var(--borde);
+		border-radius: 8px;
+		color: var(--color);
+		background-color: inherit;
+		gap: 8px;
+		cursor: inherit;
+	}
+
+	.icon {
+		width: 50px;
+		height: 50px;
+	}
+
+	/* Tamaño para sm */
+	@media (640px < width) {
+		.section_skill {
+			padding: 0 90px;
+		}
+	}
+
+	/* Tamaño para md */
+	@media (768px < width) {
+		.section_skill {
+			padding: 0 150px;
+		}
+	}
+
+	/* Tamaño para lg */
+	@media (1024px < width) {
+		.section_skill {
+			padding: 0 200px;
+		}
+	}
+
+	/* Tamaño para xl */
+	@media (1280px < width) {
+	}
+
+	/* Tamaño para 2xl */
+	@media (1536px < width) {
+	}
+</style>

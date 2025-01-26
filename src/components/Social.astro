@@ -1,0 +1,148 @@
+---
+import IconWassap from "../icons/wassap.svg";
+import IconGithub from "../icons/github.svg";
+import IconLinkedin from "../icons/linkedin.svg";
+---
+
+<section class="section">
+    <article class="article">
+        <h2>🔗 Redes Sociales</h2>
+        <section class="social">
+            <button class="button_wassap">
+                <IconWassap class="icon" mode="sprite" />Wassap
+            </button>
+            <a
+                class="button_github"
+                href="https://github.com/kyozApp"
+                target="_blank"
+            >
+                <IconGithub class="icon" mode="sprite" />GitHub
+            </a>
+            <a class="button_linkedin" href="#" target="_blank">
+                <IconLinkedin class="icon" mode="sprite" />Linkedin
+            </a>
+        </section>
+    </article>
+</section>
+
+<script>
+    const buttons = document.querySelectorAll("button.button_wassap");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const numero_celular = "51927993661";
+            const mensaje = "Hola, te responderé en breve";
+            const codificar_mensaje = encodeURIComponent(mensaje);
+            const whatsapp_url = `https://wa.me/${numero_celular}?text=${codificar_mensaje}`;
+            window.open(whatsapp_url, "_blank");
+        });
+    });
+</script>
+
+<style>
+    :root {
+        --fondo: light-dark(#cbd5e1, #1e293b);
+        --color-wassap: light-dark(#16a34a, #16a34a);
+        --borde-wassap: light-dark(#718096, #718096);
+        --color-github: light-dark(#020617, #f8fafc);
+        --borde-github: light-dark(#718096, #718096);
+        --color-linkedin: light-dark(#2563eb, #2563eb);
+        --borde-linkedin: light-dark(#718096, #718096);
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 400px;
+        padding: 0 50px;
+        background-color: var(--fondo);
+    }
+
+    .article {
+        width: 100%;
+        height: 100%;
+    }
+
+    .social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .button_wassap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 1px solid var(--borde-wassap);
+        border-radius: 8px;
+        color: var(--color-wassap);
+        background-color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        gap: 8px;
+    }
+
+    .button_github {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 1px solid var(--borde-github);
+        border-radius: 8px;
+        color: var(--color-github);
+        background-color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        gap: 8px;
+    }
+
+    .button_linkedin {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 1px solid var(--borde-linkedin);
+        border-radius: 8px;
+        color: var(--color-linkedin);
+        background-color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        gap: 8px;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Tamaño para sm */
+    @media (640px < width) {
+        .article {
+            padding: 0 90px;
+        }
+    }
+
+    /* Tamaño para md */
+    @media (768px < width) {
+        .article {
+            padding: 0 150px;
+        }
+    }
+
+    /* Tamaño para lg */
+    @media (1024px < width) {
+        .article {
+            padding: 0 200px;
+        }
+    }
+
+    /* Tamaño para xl */
+    @media (1280px < width) {
+    }
+
+    /* Tamaño para 2xl */
+    @media (1536px < width) {
+    }
+</style>

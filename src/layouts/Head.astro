@@ -1,0 +1,43 @@
+---
+interface Props {
+    title: string;
+    description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!-- ? Meta Información General -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="sitemap" href="/sitemap.xml" />
+<meta name="author" content="Kyoz" />
+
+<!-- ? Accesibilidad y Rendimiento -->
+<meta name="theme-color" content="#ffffff" />
+
+<!-- ? SEO -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<link rel="canonical" href="https://portafolio-kyoz.pages.dev/" />
+
+<!--? Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content="https://portafolio-kyoz.pages.dev/" />
+<meta property="og:image" content="https://www.example.com/image.png" />
+<meta property="og:image:alt" content="Captura del portafolio de Kyoz" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Portafolio de Kyoz" />
+<meta property="og:locale" content="es_ES" />
+
+<!-- ? Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content="https://www.example.com/image.png" />
+<meta name="twitter:site" content="@Kyoz" />
+<meta name="twitter:creator" content="@Kyoz" />

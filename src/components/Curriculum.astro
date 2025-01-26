@@ -1,0 +1,73 @@
+---
+import IconPdf from "../icons/pdf.svg";
+---
+
+<section class="section">
+    <article class="article">
+        <h2>📄 Curriculum</h2>
+        <a href="/cv.pdf" target="_blank" class="cv">
+            <IconPdf class="pdf_icon" mode="sprite" />
+        </a>
+    </article>
+</section>
+
+<style>
+    :root {
+        --fondo: light-dark(#cbd5e1, #1e293b);
+    }
+
+    .section {
+        top: 80px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+        padding: 20px 50px;
+        background-color: var(--fondo);
+    }
+
+    .article {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cv {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .pdf_icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Tamaño para sm */
+    @media (640px < width) {
+        .article {
+            padding: 0 90px;
+        }
+    }
+
+    /* Tamaño para md */
+    @media (768px < width) {
+        .article {
+            padding: 0 150px;
+        }
+    }
+
+    /* Tamaño para lg */
+    @media (1024px < width) {
+        .article {
+            padding: 0 200px;
+        }
+    }
+
+    /* Tamaño para xl */
+    @media (1280px < width) {
+    }
+
+    /* Tamaño para 2xl */
+    @media (1536px < width) {
+    }
+</style>

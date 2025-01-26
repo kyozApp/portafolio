@@ -1,0 +1,157 @@
+---
+import { Image } from "astro:assets";
+import portafolio from "../assets/Labrujastore.png";
+
+import IconAstro from "../icons/astro.svg";
+import IconHtml from "../icons/html.svg";
+import IconCss from "../icons/css.svg";
+import IconTailwind from "../icons/tailwind.svg";
+import IconJavascript from "../icons/javascript.svg";
+import IconTypescript from "../icons/typescript.svg";
+import IconMongo from "../icons/mongo.svg";
+import IconGithub from "../icons/github.svg";
+---
+
+<section class="section">
+    <article class="article">
+        <h2>🔗 LA BRUJA STORE</h2>
+        <a
+            class="figure"
+            href="https://portafolio-kyoz.pages.dev/"
+            target="_blank"
+        >
+            <Image
+                src={portafolio}
+                alt="Foto de perfil"
+                class="image"
+                loading="lazy"
+            />
+        </a>
+        <section class="section_info">
+            <p class="paragraph">
+                Proyecto creado con Astro en el frontend y Spring en el Backend
+                con MySQL, que esta hecho de componentes con typescript. Sitio
+                web de la tienda La Bruja Store con un carrito de compra,
+                catalogo y Cotización de productos.
+            </p>
+            <h3>@ Habilidades Utilizadas</h3>
+        </section>
+        <section class="skills">
+            <button class="button">
+                <IconAstro class="icon" mode="sprite" />Astro
+            </button>
+            <button class="button">
+                <IconHtml class="icon" mode="sprite" />Html
+            </button>
+            <button class="button">
+                <IconCss class="icon" mode="sprite" />Css
+            </button>
+            <button class="button">
+                <IconTailwind class="icon" mode="sprite" />Tailwind
+            </button>
+            <button class="button">
+                <IconJavascript class="icon" mode="sprite" />Javascript
+            </button>
+            <button class="button">
+                <IconTypescript class="icon" mode="sprite" />Typescript
+            </button>
+            <button class="button">
+                <IconMongo class="icon" mode="sprite" />Mongo
+            </button>
+            <button class="button">
+                <IconGithub class="icon" mode="sprite" />Github
+            </button>
+        </section>
+    </article>
+</section>
+
+<style>
+    :root {
+        --fondo: light-dark(#cbd5e1, #1e293b);
+    }
+
+    .section {
+        background-color: var(--fondo);
+        width: 100%;
+        top: 80px;
+        height: auto;
+        padding: 20px 80px;
+    }
+
+    .article {
+        width: 100%;
+        height: 100%;
+    }
+
+    .figure {
+        margin: 0;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+    }
+
+    .section_info {
+    }
+
+    .paragraph {
+    }
+
+    .skills {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .lista {
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 1px solid var(--borde);
+        border-radius: 8px;
+        color: var(--color);
+        background-color: inherit;
+        gap: 8px;
+        cursor: inherit;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Tamaño para sm */
+    @media (640px < width) {
+        .article {
+            padding: 0 90px;
+        }
+    }
+
+    /* Tamaño para md */
+    @media (768px < width) {
+        .article {
+            padding: 0 150px;
+        }
+    }
+
+    /* Tamaño para lg */
+    @media (1024px < width) {
+        .article {
+            padding: 0 200px;
+        }
+    }
+
+    /* Tamaño para xl */
+    @media (1280px < width) {
+    }
+
+    /* Tamaño para 2xl */
+    @media (1536px < width) {
+    }
+</style>

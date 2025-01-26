@@ -1,0 +1,299 @@
+---
+import IconMenu from "../icons/menu.svg";
+import IconSystem from "../icons/system.svg";
+import IconLight from "../icons/light.svg";
+import IconDark from "../icons/dark.svg";
+---
+
+<header class="header">
+    <h1 class="logo">Portafolio Kyoz</h1>
+    <label for="menu" class="label_menu">
+        <IconMenu class="menu_icon" mode="sprite" />
+        <span class="span_menu">Toggle menu</span>
+    </label>
+    <input type="checkbox" id="menu" class="input_menu" />
+    <nav class="nav">
+        <ul class="ul">
+            <li class="li">
+                <a href="/" class="a">SOBRE MI</a>
+            </li>
+            <li class="li">
+                <a href="/projects" class="a">PROYECTOS</a>
+            </li>
+            <li class="li">
+                <a href="/contact" class="a">CONTACTO</a>
+            </li>
+            <section class="section_scheme">
+                <span class="span_scheme">TEMA: </span>
+                <fieldset class="fieldset_scheme">
+                    <label class="label_scheme">
+                        <input
+                            name="color-scheme"
+                            type="radio"
+                            value="light dark"
+                            class="input_scheme"
+                            checked
+                        />
+                        <IconSystem class="system_icon" mode="sprite" />
+
+                        <span class="span_menu">Toggle menu</span>
+                    </label>
+                    <label class="label_scheme">
+                        <input
+                            name="color-scheme"
+                            type="radio"
+                            value="light"
+                            class="input_scheme"
+                        /><IconLight class="light_icon" mode="sprite" />
+                        <span class="span_menu">Toggle menu</span>
+                    </label>
+                    <label class="label_scheme">
+                        <input
+                            name="color-scheme"
+                            type="radio"
+                            value="dark"
+                            class="input_scheme"
+                        /><IconDark class="dark_icon" mode="sprite" />
+                        <span class="span_menu">Toggle menu</span>
+                    </label>
+                </fieldset>
+            </section>
+        </ul>
+    </nav>
+</header>
+
+<script is:inline>
+    // Función para actualizar el tema en el documento y localStorage
+    function updateTheme(theme) {
+        // Establecer el tema en el HTML
+        document.documentElement.dataset.theme = theme;
+        // Guardar la preferencia en localStorage
+        localStorage.setItem("theme", theme);
+    }
+
+    // Detectar cambio en la selección del tema
+    const themeRadios = document.querySelectorAll('input[name="color-scheme"]');
+    themeRadios.forEach((radio) => {
+        radio.addEventListener("change", (event) => {
+            updateTheme(event.target.value);
+        });
+    });
+
+    // Recuperar y aplicar el tema guardado al cargar la página
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        updateTheme(savedTheme);
+        // Marcar el radio correspondiente como seleccionado
+        document.querySelector(
+            `input[name="color-scheme"][value="${savedTheme}"]`,
+        ).checked = true;
+    }
+</script>
+
+<style>
+    :root {
+        --color: light-dark(#020617, #fafafa);
+        --color-hover: light-dark(#b91c1c, #f87171);
+        --fondo-nav: light-dark(#e2e8f0, #334155);
+        --fondo-header: light-dark(#e2e8f0, #334155);
+    }
+
+    .header {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        z-index: 200;
+        align-items: center;
+        justify-content: space-around;
+        height: 80px;
+        background-color: var(--fondo-header);
+    }
+
+    .logo {
+        color: var(--color);
+    }
+
+    .label_menu {
+        cursor: pointer;
+
+        &:hover {
+            color: var(--color-hover);
+        }
+    }
+
+    .menu_icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .span_menu {
+        position: absolute;
+        overflow: hidden;
+        width: 0;
+        height: 0;
+    }
+
+    .input_menu {
+        display: none;
+    }
+
+    .nav {
+        position: absolute;
+        z-index: 100;
+        top: 80px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 80px);
+    }
+
+    .input_menu:checked + .nav {
+        display: flex;
+    }
+
+    .ul {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: var(--fondo-nav);
+    }
+
+    .button_tema {
+        width: 40px;
+        height: 40px;
+    }
+
+    .li {
+        list-style: none;
+    }
+
+    .a {
+        color: var(--color);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--color-hover);
+        }
+    }
+
+    .section_scheme {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .span_scheme {
+    }
+
+    .fieldset_scheme {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .label_scheme {
+        cursor: pointer;
+
+        &:hover {
+            color: var(--color-hover);
+        }
+    }
+
+    .input_scheme {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .system_icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .light_icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dark_icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Tamaño para sm */
+    @media (640px < width) {
+    }
+
+    /* Tamaño para md */
+    @media (768px < width) {
+        .header {
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+
+        .label_menu {
+            display: none;
+        }
+
+        .nav {
+            position: relative;
+            top: 0;
+            display: flex;
+            width: auto;
+            height: 80px;
+        }
+
+        .ul {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            height: 80px;
+            gap: 20px;
+        }
+
+        .span_scheme {
+            display: none;
+        }
+
+        .label_scheme {
+            display: grid;
+            place-items: center;
+        }
+    }
+
+    /* Tamaño para lg */
+    @media (1024px < width) {
+        .ul {
+            gap: 40px;
+        }
+
+        .fieldset_scheme {
+            gap: 20px;
+        }
+
+        .span_scheme {
+            display: flex;
+        }
+    }
+
+    /* Tamaño para xl */
+    @media (1280px < width) {
+        .ul {
+            gap: 60px;
+        }
+
+        .fieldset_scheme {
+            gap: 30px;
+        }
+    }
+
+    /* Tamaño para 2xl */
+    @media (1536px < width) {
+    }
+</style>

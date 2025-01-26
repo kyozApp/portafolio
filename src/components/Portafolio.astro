@@ -1,0 +1,151 @@
+---
+import { Image } from "astro:assets";
+import portafolio from "../assets/Portafolio.png";
+
+import IconAstro from "../icons/astro.svg";
+import IconHtml from "../icons/html.svg";
+import IconCss from "../icons/css.svg";
+import IconJavascript from "../icons/javascript.svg";
+import IconTypescript from "../icons/typescript.svg";
+import IconCloudfare from "../icons/cloudfare.svg";
+import IconGithub from "../icons/github.svg";
+---
+
+<section class="section">
+    <article class="article">
+        <h2>🔗 PORTAFOLIO</h2>
+        <a
+            class="figure"
+            href="https://portafolio-kyoz.pages.dev/"
+            target="_blank"
+        >
+            <Image
+                src={portafolio}
+                alt="Foto de perfil"
+                class="image"
+                loading="eager"
+            />
+        </a>
+        <section class="section_info">
+            <p class="paragraph">
+                Proyecto creado con Astro, que esta hecho de componentes con
+                typescript.
+            </p>
+            <h3>@ Habilidades Utilizadas</h3>
+        </section>
+        <section class="skills">
+            <button class="button">
+                <IconAstro class="icon" mode="sprite" />Astro
+            </button>
+            <button class="button">
+                <IconHtml class="icon" mode="sprite" />Html
+            </button>
+            <button class="button">
+                <IconCss class="icon" mode="sprite" />Css
+            </button>
+            <button class="button">
+                <IconJavascript class="icon" mode="sprite" />Javascript
+            </button>
+            <button class="button">
+                <IconTypescript class="icon" mode="sprite" />Typescript
+            </button>
+            <button class="button">
+                <IconCloudfare class="icon" mode="sprite" />Mongo
+            </button>
+            <button class="button">
+                <IconGithub class="icon" mode="sprite" />Github
+            </button>
+        </section>
+    </article>
+</section>
+
+<style>
+    :root {
+        --fondo: light-dark(#cbd5e1, #1e293b);
+    }
+
+    .section {
+        top: 80px;
+        width: 100%;
+        height: auto;
+        padding: 20px 80px;
+        background-color: var(--fondo);
+    }
+
+    .article {
+        width: 100%;
+        height: 100%;
+    }
+
+    .figure {
+        margin: 0;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+    }
+
+    .section_info {
+    }
+
+    .paragraph {
+    }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 20px;
+    }
+
+    .lista {
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 1px solid var(--borde);
+        border-radius: 8px;
+        color: var(--color);
+        background-color: inherit;
+        gap: 8px;
+        cursor: inherit;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Tamaño para sm */
+    @media (640px < width) {
+        .article {
+            padding: 0 90px;
+        }
+    }
+
+    /* Tamaño para md */
+    @media (768px < width) {
+        .article {
+            padding: 0 150px;
+        }
+    }
+
+    /* Tamaño para lg */
+    @media (1024px < width) {
+        .article {
+            padding: 0 200px;
+        }
+    }
+
+    /* Tamaño para xl */
+    @media (1280px < width) {
+    }
+
+    /* Tamaño para 2xl */
+    @media (1536px < width) {
+    }
+</style>
